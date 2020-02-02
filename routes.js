@@ -7,7 +7,7 @@ module.exports =  {
         try{
             if (dataObj.methodName == 'post' || dataObj.methodName == 'put') {
                 let sales = dataModels.sales;
-                let {car_id, sold_on, sale_price, sale_location, salesman_id, saleType} = dataObj.data;
+                let {car_id, sold_on, sale_price, sale_location, salesman_id} = dataObj.data;
                 if (car_id && sold_on && sale_price && sale_location && salesman_id){
                     sales.push({car_id, sold_on, sale_price, sale_location, salesman_id});
                     fs.writeFileSync("./data/sales.json",JSON.stringify(sales));
@@ -240,27 +240,6 @@ module.exports =  {
     notDefined : async (dataObj, res) => {
         errReturned(res,`${dataObj.path} url not found.`)
     }
- }
-
-
- /**
-  * calculate incentive and saved it in file...
-  */
-
- function calculateIncentive(dataObj) {
-     return new Promise(async (resolve, reject) => {
-        let incentivesArr = require('./data/incentive.json');
-        let incentive = undefined;
-        incentivesArr.map(incentiveObj => {if (incentiveObj.type == dataObj.saleType) incentive = incentiveObj});
-        let allCars = require('./data/cars.json');
-        let car = undefined;
-        allCars.map(carObj => {if (carObj.id == dataObj.car_id) car = carObj});
-        if (incentive && car) {
-           // I didn't get the formula or trick from which we calculate incentive because of requirement ambiguity...
-           resolve(true);
-        } else !incentive? reject(`saleType must be of type [location_sales, car_brand_sales, sale_period, car_condition_sales].`) 
-                : reject(`car with id ${car_id} not exist in record.`);
-     })
  }
 
 
