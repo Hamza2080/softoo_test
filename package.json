@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Softoo Entry Assigment",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "license": "MIT"
+  "scripts": {},
+  "license": "MIT",
+  "dependencies": {
+  }
 }

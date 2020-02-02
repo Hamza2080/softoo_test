@@ -1,0 +1,25 @@
+[{
+    "totalCommision": 10,
+    "totalSale": 468000,
+    "totalCommisionAmount": 46800,
+    "id": "QASIM123",
+    "name": "Qaism Ahmed"
+}, {
+    "totalCommision": 3,
+    "totalSale": 300000,
+    "totalCommisionAmount": 9000,
+    "id": "OMAR345",
+    "name": "Omar Asim"
+}, {
+    "totalCommision": 1,
+    "totalSale": 4234000,
+    "totalCommisionAmount": 42340,
+    "id": "JANKHAN115",
+    "name": "Jaan Khan"
+}, {
+    "totalCommision": 0,
+    "totalSale": 0,
+    "totalCommisionAmount": 0,
+    "id": "hamza123",
+    "name": "hamza"
+}]
